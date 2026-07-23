@@ -154,7 +154,7 @@ src/main/resources/mapper/        LawMapper.xml
 | 정상 처리·정상 결과 | 200 / 201 | `SUCCESS` | 조회 성공, 등록 완료 |
 | 요청은 유효, 업무 규칙이 거절 | **200** | `FAIL` | 아래 닫힌 목록 참조 |
 | 요청 형식·값이 잘못됨 | 400 | `FAIL` | 필수값 누락, 타입 불일치 |
-| 인증 실패 | 401 | `FAIL` | 토큰 없음·만료 |
+| 인증 실패 | 401 | `FAIL` | 세션 없음·만료 (이 시스템은 세션 방식 — 아래 note) |
 | **인가 실패 (권한 전반)** | 403 | `FAIL` | Security 계층이 차단 — 역할·데이터 기준 모두 |
 | 대상이 존재하지 않음 | 404 | `FAIL` | 없는 경로, **없는 법령 ID** |
 | 서버 오류 | 500 | `FAIL` | 예기치 못한 예외 |
@@ -173,6 +173,10 @@ src/main/resources/mapper/        LawMapper.xml
 **권한은 이 목록에 없다.** 권한 판정은 전부 Security 계층에서 처리한다(아래 참조).
 
 ### 권한 판정은 Security 계층에서
+
+> **note (이 프로젝트 = 관리시스템)**: 인증은 **JWT가 아니라 세션 방식**이다. 위 `security/jwt` 패키지 대신
+> `global/security/SecurityConfig`(세션)를 쓴다. 상세·근거는 `.claude/context/security-policy.md`.
+> 아래 인가(권한 판정) 규칙은 세션·JWT와 무관하게 그대로 적용된다.
 
 역할 기반이든 데이터 기반이든 **권한 체크는 Service 안에서 하지 않는다.** Security 계층에서 차단하고 **403**을 내린다.
 

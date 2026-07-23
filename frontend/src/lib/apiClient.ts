@@ -7,14 +7,11 @@ import { BusinessError, type ApiResponse } from '@/lib/errors';
 /**
  * 공통 응답 포맷을 인터셉터 한 곳에서 해체한다.
  * 업무 규칙 거절은 HTTP 200 + status=FAIL 이므로, 벗기지 않고 쓰면 실패가 성공으로 처리된다.
+ *
+ * 인증: 이 시스템(관리시스템)은 세션 방식이다. JWT/Bearer 헤더를 쓰지 않고,
+ * withCredentials 로 세션 쿠키(JSESSIONID)를 자동 전송한다. (근거: .claude/context/security-policy.md)
  */
-export const apiClient = axios.create({ baseURL: '/api' });
-
-apiClient.interceptors.request.use((config) => {
-  const token = useAuthStore.getState().token; // JWT
-  if (token) config.headers.Authorization = `Bearer ${token}`;
-  return config;
-});
+export const apiClient = axios.create({ baseURL: '/api', withCredentials: true });
 
 apiClient.interceptors.response.use(
   (res: AxiosResponse) => {
