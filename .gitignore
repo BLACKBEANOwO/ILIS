@@ -1,6 +1,10 @@
 # 개인 작업일지 (git 추적 제외)
 작업일지/
 
+# IDE (IntelliJ)
+.idea/
+*.iml
+
 # 루트 도구/OS
 .DS_Store
 *.log
