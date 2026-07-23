@@ -9,6 +9,9 @@
 .env
 !.env.example
 
+# 목업/참고 자료 (저장소 미포함)
+관리시스템_목업/
+
 # 루트 도구/OS
 .DS_Store
 *.log
