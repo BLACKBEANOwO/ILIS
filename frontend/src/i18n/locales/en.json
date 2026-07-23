@@ -1,0 +1,10 @@
+{
+  "app": {
+    "title": "ILIS",
+    "subtitle": "Indonesia Legislation Information System"
+  },
+  "error": {
+    "forbidden": "You do not have permission for this action.",
+    "server": "A server error occurred. Please try again later."
+  }
+}

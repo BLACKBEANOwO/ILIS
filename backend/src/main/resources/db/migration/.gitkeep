@@ -1,0 +1,2 @@
+# Flyway 마이그레이션 디렉터리. 파일명 규약: V{버전}__{설명}.sql (예: V1__create_law.sql)
+# DDL은 psql로 직접 실행하지 않는다 — 앱 기동 시 Flyway가 자동 적용한다.

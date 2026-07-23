@@ -1,0 +1,14 @@
+# 로컬 개발 — 접속 계정/비밀번호는 환경변수로 주입한다(값을 커밋하지 않는다).
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ilis
+    username: ${DB_USERNAME:ilis}
+    password: ${DB_PASSWORD}
+
+cors:
+  allowed-origins: http://localhost:5173
+
+logging:
+  level:
+    com.mainlineit.ilis: DEBUG
+    org.mybatis: DEBUG

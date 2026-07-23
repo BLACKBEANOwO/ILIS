@@ -1,0 +1,5 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* shadcn/ui 초기화(`npx shadcn@latest init`) 시 CSS 변수 테마가 이 파일에 추가된다. */

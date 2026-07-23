@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(mvn:*)",
+      "Bash(./mvnw:*)",
+      "Bash(mvnw:*)",
+      "Bash(npm install)",
+      "Bash(npm ci)",
+      "Bash(npm run:*)",
+      "Bash(npm test:*)",
+      "Bash(npx:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)",
+      "Bash(git fetch:*)",
+      "Bash(git add:*)",
+      "Read(//c/dev/ILIS_Practice/**)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./**/.env)",
+      "Read(./**/application-*.yml)",
+      "Read(./**/*secret*)"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "app": {
+    "title": "ILIS",
+    "subtitle": "Sistem Informasi Peraturan Perundang-undangan Indonesia"
+  },
+  "error": {
+    "forbidden": "Anda tidak memiliki izin untuk tindakan ini.",
+    "server": "Terjadi kesalahan server. Silakan coba lagi nanti."
+  }
+}

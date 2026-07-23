@@ -1,0 +1,8 @@
+# 개인 작업일지 (git 추적 제외)
+작업일지/
+
+# 루트 도구/OS
+.DS_Store
+*.log
+
+# 하위 프로젝트(backend/, frontend/)의 산출물은 각 폴더의 .gitignore 가 관리한다.
