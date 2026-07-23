@@ -1,20 +1,23 @@
 import { Routes, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { AppLayout } from '@/components/layouts/AppLayout';
 
 function Home() {
   const { t } = useTranslation();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-2">
-      <h1 className="text-3xl font-bold">{t('app.title')}</h1>
-      <p className="text-gray-500">{t('app.subtitle')}</p>
-    </main>
+    <section className="space-y-1">
+      <h2 className="text-2xl font-bold">{t('app.title')}</h2>
+      <p className="text-muted-foreground">{t('app.subtitle')}</p>
+    </section>
   );
 }
 
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route element={<AppLayout />}>
+        <Route path="/" element={<Home />} />
+      </Route>
     </Routes>
   );
 }
