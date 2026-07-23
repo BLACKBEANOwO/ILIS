@@ -33,6 +33,8 @@ public class SecurityConfig {
                         session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/actuator/health", "/actuator/info").permitAll()
+                        // API 문서(springdoc) — authenticated 전환 후에도 접근 유지 대상
+                        .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                         // TODO(로그인/SSO 도입): 공개 경로 외 .anyRequest().authenticated() 로 전환
                         //   - /api/auth/** (로그인·로그아웃) permitAll
                         //   - 그 외 authenticated + @PreAuthorize 로 역할/데이터 인가
